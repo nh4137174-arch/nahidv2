@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070b18">
+<meta name="description" content="Nahid Computer, ফরিদপুর — কম্পিউটার সার্ভিস, প্রিন্টিং ও ডিজিটাল সেবা।">
+<title>Nahid Computer | Digital Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070b18;--panel:#10182b;--blue:#3984ff;--cyan:#38e4ff;--text:#f3f7ff;--muted:#a5b2cb}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:'Hind Siliguri',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.container{width:min(1120px,92%);margin:auto}
+nav{position:sticky;top:0;z-index:10;background:#070b18eF;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff12}
+.nav-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{font-size:23px;font-weight:700}
+.logo span{color:var(--cyan)}
+.nav-links{display:flex;gap:23px;align-items:center}
+.nav-links a:hover{color:var(--cyan)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 19px;border-radius:12px;border:1px solid #ffffff18;background:#ffffff08;color:white;transition:.3s}
+.btn.primary{background:linear-gradient(120deg,#2768ef,#16bce8);border:0;box-shadow:0 0 25px #247cff30}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 30px #268bff30}
+.menu-btn{display:none}
+.hero{min-height:610px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:35px;padding-top:65px;padding-bottom:65px;position:relative}
+.hero:before{content:"";position:absolute;width:400px;height:400px;background:#1467ff28;filter:blur(100px);right:3%;top:10%;pointer-events:none}
+.tag{display:inline-block;border:1px solid #3984ff60;color:var(--cyan);padding:7px 13px;border-radius:50px;background:#3984ff12;margin-bottom:20px}
+h1{font-size:clamp(38px,5.4vw,66px);line-height:1.18;letter-spacing:-1px}
+.gradient{background:linear-gradient(90deg,#54a1ff,#46efff);background-clip:text;-webkit-background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:18px;line-height:1.9;margin:20px 0 26px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.visual{min-height:320px;display:grid;place-items:center;position:relative}
+.orbit{width:min(320px,75vw);aspect-ratio:1;border:1px solid #3d94ff55;border-radius:50%;display:grid;place-items:center;animation:spin 24s linear infinite;box-shadow:0 0 70px #176dff17,inset 0 0 55px #176dff12}
+.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #4c9eff35;border-radius:50%;inset:12%;transform:rotateX(65deg)}
+.orbit:after{inset:22%;transform:rotateY(65deg)}
+.core{width:130px;height:130px;border-radius:35px;background:linear-gradient(140deg,#2365df,#18c9e5);display:grid;place-items:center;font-size:60px;box-shadow:0 0 65px #268bff75;animation:float 4s ease-in-out infinite}
+.float-icon{position:absolute;padding:14px;border-radius:17px;background:#101a30;border:1px solid #4d8bff55;font-size:27px;box-shadow:0 10px 35px #0006;animation:float 4s ease-in-out infinite}
+.f1{top:8%;left:7%}.f2{right:0;top:23%;animation-delay:1s}.f3{bottom:7%;left:13%;animation-delay:2s}
+section{padding:75px 0}
+.section-head{text-align:center;margin-bottom:35px}
+.section-head h2{font-size:clamp(29px,4vw,42px);margin-bottom:10px}
+.section-head p,.muted{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.card{padding:23px;border-radius:20px;border:1px solid #ffffff13;background:linear-gradient(145deg,#111b30,#0b1120);transition:transform .3s,border-color .3s,box-shadow .3s}
+.card:hover{transform:translateY(-7px);border-color:#3984ff85;box-shadow:0 15px 45px #126cff18}
+.service-icon{font-size:30px;margin-bottom:12px}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{color:var(--muted);line-height:1.7}
+.price{color:var(--cyan);font-weight:700;margin:14px 0}
+.filters{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
+.filters input,.filters select,.field input,.field textarea{width:100%;background:#0b1324;border:1px solid #ffffff20;color:white;padding:12px 14px;border-radius:11px;outline:none}
+.filters input{max-width:340px}
+.filters select{width:auto;min-width:170px}
+input:focus,textarea:focus,select:focus{border-color:var(--blue)!important}
+.order-layout{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.info-panel{padding:28px;border:1px solid #ffffff16;border-radius:20px;background:var(--panel)}
+.info-panel h3{font-size:25px;margin-bottom:15px}
+.contact-line{padding:12px 0;border-bottom:1px solid #ffffff12;color:var(--muted);line-height:1.7}
+.field{margin:14px 0}
+.field label{display:block;margin-bottom:6px}
+.field textarea{min-height:95px;resize:vertical}
+footer{padding:28px 0;border-top:1px solid #ffffff12;color:var(--muted);text-align:center}
+.reveal{animation:appear .8s both}
+.whatsapp{position:fixed;right:20px;bottom:20px;z-index:8;border-radius:50px;background:#19b95b;color:#fff;padding:13px 18px;box-shadow:0 0 25px #19b95b45;animation:pulse 2.5s infinite}
+#topBtn{position:fixed;bottom:82px;right:22px;display:none;border:0;border-radius:50%;width:42px;height:42px;background:#1d6eea;color:white;font-size:20px}
+@keyframes appear{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{50%{box-shadow:0 0 0 9px #19b95b12,0 0 25px #19b95b45}}
+@media(max-width:760px){
+ .nav-inner{min-height:65px}.menu-btn{display:block;background:none;border:0;color:white;font-size:25px}
+ .nav-links{display:none;position:absolute;top:65px;left:0;right:0;padding:20px;background:#0a1020;flex-direction:column;align-items:stretch;border-bottom:1px solid #ffffff15}
+ .nav-links.open{display:flex}.nav-links .btn{text-align:center}
+ .hero{grid-template-columns:1fr;padding-top:55px;min-height:auto}.visual{min-height:300px}
+ .cards{grid-template-columns:1fr}.order-layout{grid-template-columns:1fr}
+ section{padding:55px 0}h1{font-size:42px}
+}
+@media(min-width:520px) and (max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<nav>
+ <div class="container nav-inner">
+  <a class="logo" href="#home">Nahid <span>Computer.</span></a>
+  <button class="menu-btn" id="menuBtn" aria-label="মেনু খুলুন">☰</button>
+  <div class="nav-links" id="navLinks">
+   <a href="#home">হোম</a><a href="#services">সার্ভিস</a><a href="#prices">মূল্যতালিকা</a><a href="#about">আমাদের সম্পর্কে</a><a href="#contact">যোগাযোগ</a>
+   <a class="btn primary" href="#contact">অর্ডার করুন ↗</a>
+  </div>
+ </div>
+</nav>
+
+<main>
+<section class="container hero" id="home">
+ <div class="reveal">
+  <span class="tag">✦ আপনার বিশ্বস্ত ডিজিটাল সার্ভিস সেন্টার</span>
+  <h1>আপনার সকল ডিজিটাল সেবার <span class="gradient">নির্ভরযোগ্য ঠিকানা</span></h1>
+  <p>কম্পিউটার সার্ভিস, অনলাইন আবেদন, প্রিন্টিং ও ডিজিটাল সেবা—সবকিছু এক জায়গায়।</p>
+  <div class="hero-actions">
+   <a class="btn primary" href="#services">সার্ভিস দেখুন ↗</a>
+   <a class="btn" href="https://wa.me/8801324392059" target="_blank" rel="noopener">WhatsApp-এ যোগাযোগ</a>
+  </div>
+ </div>
+ <div class="visual" aria-hidden="true">
+  <div class="orbit"><div class="core">⌘</div></div>
+  <div class="float-icon f1">💻</div><div class="float-icon f2">🖨️</div><div class="float-icon f3">📄</div>
+ </div>
+</section>
+
+<section id="services">
+ <div class="container">
+  <div class="section-head"><h2>আমাদের <span class="gradient">সার্ভিসসমূহ</span></h2><p>আপনার প্রয়োজনীয় ডিজিটাল সেবা সহজেই বেছে নিন।</p></div>
+  <div class="cards" id="serviceCards"></div>
+ </div>
+</section>
+
+<section id="prices">
+ <div class="container">
+  <div class="section-head"><h2>সার্ভিস <span class="gradient">মূল্যতালিকা</span></h2><p>আপনার প্রয়োজনীয় সার্ভিস খুঁজুন এবং অর্ডার করুন।</p></div>
+  <div class="filters">
+   <input id="search" type="search" placeholder="সার্ভিস খুঁজুন...">
+   <select id="category"><option value="all">সব ক্যাটাগরি</option><option value="print">প্রিন্ট ও ডকুমেন্ট</option><option value="online">অনলাইন সেবা</option><option value="other">অন্যান্য</option></select>
+  </div>
+  <div class="cards" id="priceCards"></div>
+  <p class="muted" style="text-align:center;margin-top:24px">দ্রষ্টব্য: এগুলো নমুনা মূল্য। প্রকাশের আগে দোকানের প্রকৃত মূল্য দিয়ে আপডেট করুন। চূড়ান্ত মূল্য অর্ডারের আগে নিশ্চিত করুন।</p>
+ </div>
+</section>
+
+<section id="about">
+ <div class="container">
+  <div class="section-head"><h2>আমাদের <span class="gradient">সম্পর্কে</span></h2></div>
+  <div class="info-panel" style="max-width:800px;margin:auto;text-align:center">
+   <h3>Nahid Computer</h3>
+   <p class="muted" style="line-height:2">নাহিদ কম্পিউটার ফরিদপুরের একটি কম্পিউটার ও ডিজিটাল সেবা প্রতিষ্ঠান। গ্রাহকদের প্রয়োজন অনুযায়ী অনলাইন আবেদন, ডকুমেন্ট প্রস্তুত, প্রিন্টিং এবং অন্যান্য ডিজিটাল সেবা প্রদানই আমাদের লক্ষ্য।</p>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="container">
+  <div class="section-head"><h2>যোগাযোগ ও <span class="gradient">অর্ডার</span></h2><p>আপনার প্রয়োজনীয় সার্ভিসের জন্য আমাদের সঙ্গে যোগাযোগ করুন।</p></div>
+  <div class="order-layout">
+   <div class="info-panel">
+    <h3>যোগাযোগের তথ্য</h3>
+    <div class="contact-line">📍 ঠিকানা: কোর্ট পাড়া, ২৯ নং দোকান, ফরিদপুর সদর, ফরিদপুর</div>
+    <div class="contact-line">📞 মোবাইল: 01324392059</div>
+    <div class="contact-line">💬 WhatsApp: 01324392059</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px">
+     <a class="btn primary" href="tel:01324392059">কল করুন</a>
+     <a class="btn" href="https://wa.me/8801324392059" target="_blank" rel="noopener">WhatsApp খুলুন</a>
+    </div>
+   </div>
+   <form class="info-panel" id="orderForm">
+    <h3>অর্ডার ফর্ম</h3>
+    <div class="field"><label for="customerName">আপনার নাম *</label><input id="customerName" required maxlength="100" placeholder="নাম লিখুন"></div>
+    <div class="field"><label for="customerPhone">মোবাইল নম্বর *</label><input id="customerPhone" required inputmode="tel" maxlength="20" placeholder="মোবাইল নম্বর লিখুন"></div>
+    <div class="field"><label for="serviceChoice">সার্ভিস নির্বাচন করুন *</label><select id="serviceChoice" required></select></div>
+    <div class="field"><label for="quantity">পরিমাণ / পৃষ্ঠা</label><input id="quantity" type="number" min="1" max="10000" value="1" required></div>
+    <div class="field"><label for="notes">অতিরিক্ত তথ্য</label><textarea id="notes" maxlength="1000" placeholder="আপনার কাজের বিবরণ লিখুন"></textarea></div>
+    <p id="estimate" class="price">আনুমানিক মূল্য: যোগাযোগ করে নিশ্চিত করুন</p>
+    <button class="btn primary" type="submit" style="width:100%">WhatsApp-এ অর্ডার পাঠান ↗</button>
+    <p class="muted" style="font-size:13px;margin-top:12px">বাটনে চাপলে WhatsApp খুলবে। অর্ডার পাঠাতে সেখানে Send চাপতে হবে।</p>
+   </form>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer><div class="container">© <span id="year"></span> Nahid Computer. All rights reserved.<br>কোর্ট পাড়া, ২৯ নং দোকান, ফরিদপুর সদর, ফরিদপুর</div></footer>
+<a class="whatsapp" href="https://wa.me/8801324392059" target="_blank" rel="noopener">☏ WhatsApp</a>
+<button id="topBtn" aria-label="উপরে যান">↑</button>
+
+<script>
+// দোকানের আসল মূল্য অনুযায়ী এই তালিকা পরিবর্তন করুন।
+const services = [
+ {name:"বাংলা কম্পোজ",icon:"⌨️",price:100,type:"unit",unit:"পৃষ্ঠা",category:"print",desc:"বাংলা ডকুমেন্ট টাইপিং"},
+ {name:"ইংরেজি কম্পোজ",icon:"📝",price:100,type:"unit",unit:"পৃষ্ঠা",category:"print",desc:"ইংরেজি ডকুমেন্ট টাইপিং"},
+ {name:"সাদা-কালো প্রিন্ট",icon:"🖨️",price:10,type:"unit",unit:"পৃষ্ঠা",category:"print",desc:"সাদা-কালো ডকুমেন্ট প্রিন্ট"},
+ {name:"কালার প্রিন্ট",icon:"🌈",price:20,type:"unit",unit:"পৃষ্ঠা",category:"print",desc:"রঙিন ডকুমেন্ট প্রিন্ট"},
+ {name:"ফটোকপি",icon:"📄",price:2,type:"unit",unit:"পৃষ্ঠা",category:"print",desc:"ডকুমেন্ট ফটোকপি"},
+ {name:"স্ক্যান",icon:"📑",price:10,type:"unit",unit:"পৃষ্ঠা",category:"print",desc:"ডকুমেন্ট স্ক্যান"},
+ {name:"PDF তৈরি",icon:"📁",price:20,type:"starting",category:"print",desc:"PDF ফাইল তৈরি — মূল্য শুরু"},
+ {name:"CV তৈরি",icon:"💼",price:100,type:"starting",category:"online",desc:"প্রফেশনাল CV তৈরি — মূল্য শুরু"},
+ {name:"tin তৈরি",icon:"💼",price:100,type:"starting",category:"online",desc:"প্রফেশনাল CV তৈরি — মূল্য শুরু"},
+ {name:"আয়কর রির্টান তৈরি",icon:"💼",price:500,type:"starting",category:"online",desc:"প্রফেশনাল CV তৈরি — মূল্য শুরু"},
+ {name:" নামজারি আবেদন",icon:"💼",price:500,type:"starting",category:"online",desc:"প্রফেশনাল CV তৈরি — মূল্য শুরু"},
+ {name:"চাকরির আবেদন",icon:"📋",price:100,type:"starting",category:"online",desc:"চাকরির আবেদন সহায়তা — মূল্য শুরু"},
+ {name:"খাজনা দেওযা",icon:"💼",price:100,type:"starting",category:"online",desc:"প্রফেশনাল CV তৈরি — মূল্য শুরু"},
+ {name:"অনলাইন ফরম পূরণ",icon:"🌐",price:50,type:"starting",category:"online",desc:"অনলাইন ফরম পূরণ — মূল্য শুরু"},
+ {name:"ই-মেইল সেটআপ",icon:"✉️",price:50,type:"starting",category:"online",desc:"ই-মেইল তৈরি ও সেটআপ — মূল্য শুরু"},
+ {name:"ছবি প্রিন্ট",icon:"🖼️",price:null,type:"contact",category:"other",desc:"ছবি প্রিন্টের মূল্য জানতে যোগাযোগ করুন"},
+ {name:"ছবি এডিটিং",icon:"🎨",price:50,type:"starting",category:"other",desc:"ছবি এডিটিং — মূল্য শুরু"},
+ {name:"জন্ম নিবন্ধন আবেদন সহায়তা",icon:"📃",price:100,type:"starting",category:"online",desc:"অনলাইন আবেদন সহায়তা — মূল্য শুরু"},
+ {name:"অন্যান্য ডিজিটাল সেবা",icon:"⚙️",price:null,type:"contact",category:"other",desc:"মূল্য জানতে যোগাযোগ করুন"}
+];
+
+const money = n => "৳" + Number(n).toLocaleString("en-US");
+const displayPrice = s => s.type==="unit" ? `${money(s.price)} / ${s.unit}` : s.type==="starting" ? `${money(s.price)} থেকে` : "মূল্য জানতে যোগাযোগ করুন";
+
+function makeCard(s,orderButton=true){
+ const article=document.createElement("article");
+ article.className="card";
+ const icon=document.createElement("div");icon.className="service-icon";icon.textContent=s.icon;
+ const title=document.createElement("h3");title.textContent=s.name;
+ const desc=document.createElement("p");desc.textContent=s.desc;
+ const price=document.createElement("div");price.className="price";price.textContent=displayPrice(s);
+ article.append(icon,title,desc,price);
+ if(orderButton){const b=document.createElement("button");b.className="btn primary";b.type="button";b.textContent="অর্ডার করুন ↗";b.addEventListener("click",()=>{document.getElementById("serviceChoice").value=s.name;updateEstimate();document.getElementById("contact").scrollIntoView({behavior:"smooth"});});article.append(b);}
+ return article;
+}
+function renderCards(){
+ const servicesBox=document.getElementById("serviceCards");
+ servicesBox.replaceChildren();
+ services.slice(0,6).forEach(s=>servicesBox.append(makeCard(s)));
+ renderPrices();
+}
+function renderPrices(){
+ const q=document.getElementById("search").value.trim().toLowerCase();
+ const cat=document.getElementById("category").value;
+ const box=document.getElementById("priceCards");box.replaceChildren();
+ const matches=services.filter(s=>(s.name+" "+s.desc).toLowerCase().includes(q)&&(cat==="all"||s.category===cat));
+ matches.forEach(s=>box.append(makeCard(s)));
+ if(!matches.length){const p=document.createElement("p");p.className="muted";p.textContent="কোনো সার্ভিস পাওয়া যায়নি।";box.append(p);}
+}
+const choice=document.getElementById("serviceChoice");
+services.forEach(s=>{const o=document.createElement("option");o.value=s.name;o.textContent=s.name+" — "+displayPrice(s);choice.append(o);});
+function updateEstimate(){
+ const s=services.find(x=>x.name===choice.value);
+ const qty=Math.max(1,Math.min(10000,Number(document.getElementById("quantity").value)||1));
+ const estimate=document.getElementById("estimate");
+ if(s&&s.type==="unit") estimate.textContent=`আনুমানিক মূল্য: ${money(s.price*qty)} (${qty} ${s.unit})`;
+ else if(s&&s.type==="starting") estimate.textContent=`আনুমানিক মূল্য: ${money(s.price)} থেকে; চূড়ান্ত মূল্য নিশ্চিত করুন`;
+ else estimate.textContent="আনুমানিক মূল্য: যোগাযোগ করে নিশ্চিত করুন";
+}
+document.getElementById("search").addEventListener("input",renderPrices);
+document.getElementById("category").addEventListener("change",renderPrices);
+choice.addEventListener("change",updateEstimate);
+document.getElementById("quantity").addEventListener("input",updateEstimate);
+document.getElementById("orderForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ const name=document.getElementById("customerName").value.trim();
+ const phone=document.getElementById("customerPhone").value.trim();
+ const s=services.find(x=>x.name===choice.value);
+ const qty=Math.max(1,Math.min(10000,Number(document.getElementById("quantity").value)||1));
+ const notes=document.getElementById("notes").value.trim();
+ if(!name||!phone||!s){alert("দয়া করে প্রয়োজনীয় তথ্য পূরণ করুন।");return;}
+ if(!/^[0-9+\-\s()]{7,20}$/.test(phone)){alert("সঠিক মোবাইল নম্বর লিখুন।");return;}
+ const total=s.type==="unit"?money(s.price*qty):s.type==="starting"?money(s.price)+" থেকে (চূড়ান্ত মূল্য নিশ্চিত করতে হবে)":"মূল্য জানতে যোগাযোগ করতে হবে";
+ const msg=`Nahid Computer - নতুন অর্ডার\nনাম: ${name}\nমোবাইল: ${phone}\nসার্ভিস: ${s.name}\nপরিমাণ: ${qty}${s.unit?" "+s.unit:""}\nমূল্য: ${total}\nঅতিরিক্ত তথ্য: ${notes||"নেই"}\nতারিখ: ${new Date().toLocaleString("bn-BD")}\nঅনুগ্রহ করে চূড়ান্ত মূল্য নিশ্চিত করুন।`;
+ window.open("https://wa.me/8801324392059?text="+encodeURIComponent(msg),"_blank","noopener");
+});
+document.getElementById("menuBtn").addEventListener("click",()=>document.getElementById("navLinks").classList.toggle("open"));
+document.querySelectorAll("#navLinks a").forEach(a=>a.addEventListener("click",()=>document.getElementById("navLinks").classList.remove("open")));
+const topBtn=document.getElementById("topBtn");
+window.addEventListener("scroll",()=>{topBtn.style.display=window.scrollY>350?"block":"none";},{passive:true});
+topBtn.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+document.getElementById("year").textContent=new Date().getFullYear();
+renderCards();updateEstimate();
+</script>
+</body>
+</html>
